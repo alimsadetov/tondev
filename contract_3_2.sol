@@ -27,12 +27,12 @@ contract contract_3_2 {
 		tvm.accept();
 		_;
 	}
-
+	//функция добавления задания
     function addTask(string _name) public checkOwnerAndAccept{
         index+=1;
         list[index] = Task(_name, now, false);
     }
-
+	//функция возвращающая количество выполненных заданий
     function getCountOfOpenedTasks() public checkOwnerAndAccept returns(int8){
         int8 count =0;
         for (int8 i = 0;i<=index;i++){
@@ -47,7 +47,7 @@ contract contract_3_2 {
 
 
 
-
+	//функция возвращает весь список заданий
     function getTaskList() public checkOwnerAndAccept returns(Task[]){
         Task[] tasklist;
         for (int8 i = 0; i<=index;i++){
@@ -58,12 +58,12 @@ contract contract_3_2 {
         return tasklist;
     }
 
-
+	//функция возвращает название задачи по её номеру
     function getTaskNameByKey(int8 key) public checkOwnerAndAccept returns(string){
         require(list.exists(key), 3, "there is no task with this key");
         return list[key].name;
     }
-
+	// функция удаляет задачу с данным номером и пересчитывает номера всех остальных задач (чтобы не было например 12356 а стало 12345)
     function deleteTaskByKey(int8 key) public checkOwnerAndAccept{
         require(list.exists(key), 4, "there is no task with this key");
         for (int8 i = key;i<index;i++){
@@ -73,7 +73,7 @@ contract contract_3_2 {
         index-=1;
     }
 
-
+	//функция ставящая флаг выполнено в данное задание
     function setIsDoneTrue(int8 key) public checkOwnerAndAccept{
         require(list.exists(key), 5, "there is no task with this key");
         list[key].isDone = true;
