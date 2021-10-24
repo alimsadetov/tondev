@@ -1,0 +1,51 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "createToken",
+			"inputs": [
+				{"name":"_name","type":"string"},
+				{"name":"_rooms","type":"uint256"},
+				{"name":"_stars","type":"uint8"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "putHotelOnSale",
+			"inputs": [
+				{"name":"tokenId","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "HotelToOwner",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"HotelToOwner","type":"map(uint256,uint256)"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"components":[{"name":"name","type":"string"},{"name":"rooms","type":"uint256"},{"name":"stars","type":"uint8"},{"name":"isForSale","type":"bool"}],"name":"HotelsArray","type":"tuple[]"},
+		{"name":"HotelToOwner","type":"map(uint256,uint256)"}
+	]
+}
