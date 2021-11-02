@@ -1,0 +1,91 @@
+{
+	"ABI version": 2,
+	"version": "2.1",
+	"header": ["time", "expire"],
+	"functions": [
+		{
+			"name": "getAttackPower",
+			"inputs": [
+				{"name":"val","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getProtectionPower",
+			"inputs": [
+				{"name":"val","type":"uint256"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "attack",
+			"inputs": [
+				{"name":"gameobj","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "takeAttack",
+			"inputs": [
+				{"name":"attackerPower","type":"uint256"},
+				{"name":"attacker","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "death",
+			"inputs": [
+				{"name":"attacker","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "constructor",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "hp",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"hp","type":"int256"}
+			]
+		},
+		{
+			"name": "attackPower",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"attackPower","type":"uint256"}
+			]
+		},
+		{
+			"name": "protectionPower",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"protectionPower","type":"uint256"}
+			]
+		}
+	],
+	"data": [
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"hp","type":"int256"},
+		{"name":"attackPower","type":"uint256"},
+		{"name":"protectionPower","type":"uint256"}
+	]
+}
