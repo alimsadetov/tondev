@@ -1,0 +1,7 @@
+tonos-cli
+*.keys.json
+*.code
+*.log
+*.tvc
+node_modules
+.solc_imports
