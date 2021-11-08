@@ -3,7 +3,88 @@
 	"header": ["pubkey", "time", "expire"],
 	"functions": [
 		{
-			"name": "setShoplistCode",
+			"name": "getDebotInfo",
+			"id": "0xDEB",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"name","type":"bytes"},
+				{"name":"version","type":"bytes"},
+				{"name":"publisher","type":"bytes"},
+				{"name":"key","type":"bytes"},
+				{"name":"author","type":"bytes"},
+				{"name":"support","type":"address"},
+				{"name":"hello","type":"bytes"},
+				{"name":"language","type":"bytes"},
+				{"name":"dabi","type":"bytes"},
+				{"name":"icon","type":"bytes"}
+			]
+		},
+		{
+			"name": "_menu",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addPurchase",
+			"inputs": [
+				{"name":"index","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addPurchase_",
+			"inputs": [
+				{"name":"value","type":"bytes"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "addPurchase__",
+			"inputs": [
+				{"name":"value","type":"bytes"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "showPurchases",
+			"inputs": [
+				{"name":"index","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "showPurchases_",
+			"inputs": [
+				{"components":[{"name":"id","type":"uint32"},{"name":"name","type":"bytes"},{"name":"count","type":"uint32"},{"name":"createdAt","type":"uint64"},{"name":"isBuyed","type":"bool"},{"name":"cost","type":"uint256"}],"name":"purchases","type":"tuple[]"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "removePurchase",
+			"inputs": [
+				{"name":"index","type":"uint32"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "removePurchase_",
+			"inputs": [
+				{"name":"value","type":"bytes"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setShopListCode",
 			"inputs": [
 				{"name":"code","type":"cell"},
 				{"name":"data","type":"cell"}
@@ -32,24 +113,6 @@
 			"inputs": [
 			],
 			"outputs": [
-			]
-		},
-		{
-			"name": "getDebotInfo",
-			"id": "0xDEB",
-			"inputs": [
-			],
-			"outputs": [
-				{"name":"name","type":"bytes"},
-				{"name":"version","type":"bytes"},
-				{"name":"publisher","type":"bytes"},
-				{"name":"key","type":"bytes"},
-				{"name":"author","type":"bytes"},
-				{"name":"support","type":"address"},
-				{"name":"hello","type":"bytes"},
-				{"name":"language","type":"bytes"},
-				{"name":"dabi","type":"bytes"},
-				{"name":"icon","type":"bytes"}
 			]
 		},
 		{
@@ -126,86 +189,6 @@
 			]
 		},
 		{
-			"name": "addPurchase",
-			"inputs": [
-				{"name":"index","type":"uint32"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "addPurchase_",
-			"inputs": [
-				{"name":"value","type":"bytes"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "addPurchase__",
-			"inputs": [
-				{"name":"value","type":"bytes"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "showPurchases",
-			"inputs": [
-				{"name":"index","type":"uint32"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "showPurchases_",
-			"inputs": [
-				{"components":[{"name":"id","type":"uint32"},{"name":"name","type":"bytes"},{"name":"count","type":"uint32"},{"name":"createdAt","type":"uint64"},{"name":"isBuyed","type":"bool"},{"name":"cost","type":"uint256"}],"name":"purchases","type":"tuple[]"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "buyPurchase",
-			"inputs": [
-				{"name":"index","type":"uint32"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "buyPurchase_",
-			"inputs": [
-				{"name":"value","type":"bytes"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "buyPurchase__",
-			"inputs": [
-				{"name":"value","type":"bytes"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "removePurchase",
-			"inputs": [
-				{"name":"index","type":"uint32"}
-			],
-			"outputs": [
-			]
-		},
-		{
-			"name": "removePurchase_",
-			"inputs": [
-				{"name":"value","type":"bytes"}
-			],
-			"outputs": [
-			]
-		},
-		{
 			"name": "upgrade",
 			"inputs": [
 				{"name":"state","type":"cell"}
@@ -240,27 +223,27 @@
 			]
 		},
 		{
-			"name": "m_todoCode",
+			"name": "m_shoplistCode",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"m_todoCode","type":"cell"}
+				{"name":"m_shoplistCode","type":"cell"}
 			]
 		},
 		{
-			"name": "m_todoData",
+			"name": "m_shoplistData",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"m_todoData","type":"cell"}
+				{"name":"m_shoplistData","type":"cell"}
 			]
 		},
 		{
-			"name": "m_todoStateInit",
+			"name": "m_shoplistStateInit",
 			"inputs": [
 			],
 			"outputs": [
-				{"name":"m_todoStateInit","type":"cell"}
+				{"name":"m_shoplistStateInit","type":"cell"}
 			]
 		},
 		{

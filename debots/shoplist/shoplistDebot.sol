@@ -203,17 +203,17 @@ contract ShoplistDebot is Debot, Upgradable {
     }
 
     string public nameOfPurchase;
-    function addPurchase_(string name) public {
-        nameOfPurchase = name;
-        Terminal.input(tvm.functionId(addPurchase__), "Write count of this purchase, please:", false);
+    function addPurchase_(string value) public {
+        nameOfPurchase = value;
+        Terminal.input(tvm.functionId(addPurchase__), "Enter the amount of this purchase, please:", false);
     }
 
 
-    function addPurchase__(string count) public view {
+    function addPurchase__(string value) public view {
         uint32 purchaseCount;
         optional(uint256) pubkey = 0;
-        (uint256 numb,) = stoi(count);
-        purchaseCount = uint32(numb);
+        (uint256 num,) = stoi(value);
+        purchaseCount = uint32(num);
         IShoplist(m_address).addPurchase{
                 abiVer: 2,
                 extMsg: true,
@@ -253,7 +253,7 @@ contract ShoplistDebot is Debot, Upgradable {
                 } else {
                     buyed = 'not yet paid';
                 }
-                Terminal.print(0, format("{} {}  \"{}\"  at {} for {} dollars", purchase.id, buyed, purchase.name, purchase.createdAt, purchase.cost));
+                Terminal.print(0, format("{}  \"{}\" {}pcs {} at {} for {} dollars", purchase.id, purchase.name, purchase.count, buyed, purchase.createdAt, purchase.cost));
             }
         } else {
             Terminal.print(0, "Your shoplist is empty");
@@ -278,11 +278,11 @@ contract ShoplistDebot is Debot, Upgradable {
     }
 
 
-    function buyPurchase__(string cost) public view {
-        uint32 costOfPurchase;
+    function buyPurchase__(string value) public view {
+        uint costOfPurchase;
         optional(uint256) pubkey = 0;
-        (uint256 number,) = stoi(cost);
-        costOfPurchase = uint32(number);
+        (uint num,) = stoi(value);
+        costOfPurchase = num;
         IShoplist(m_address).buyPurchase{
                 abiVer: 2,
                 extMsg: true,
@@ -307,7 +307,7 @@ contract ShoplistDebot is Debot, Upgradable {
     }
 
     function removePurchase_(string value) public view {
-        (uint256 nu,) = stoi(value);
+        (uint256 num,) = stoi(value);
         optional(uint256) pubkey = 0;
         IShoplist(m_address).removePurchase{
                 abiVer: 2,
@@ -318,7 +318,7 @@ contract ShoplistDebot is Debot, Upgradable {
                 expire: 0,
                 callbackId: tvm.functionId(onSuccess),
                 onErrorId: tvm.functionId(onError)
-            }(uint32(nu));
+            }(uint32(num));
     }
 
     function _getStat(uint32 answerId) private view {
