@@ -1,3 +1,8 @@
-# tondev
-Добавил выполненное задание 2.1 в файле contract_2_1.sol
-Добавлены 3.1 и 3.2 (названия соответствующие)
+## Smart-contracts and DeBots on Solidity
+​
+Author: Alim Sadetov
+​
+
+## Projects
+
+### ![1. Shoplist DeBot](./shoplist)
