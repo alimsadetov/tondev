@@ -5,4 +5,4 @@ Author: Alim Sadetov
 
 ## Projects
 
-### ![1. Shoplist DeBot](./shoplist)
+### [1. Shoplist DeBot](./shoplist)
