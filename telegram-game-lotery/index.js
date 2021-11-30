@@ -9,11 +9,11 @@ const { GamecontractContract } = require("./GamecontractContract.js")
 const { GiverContract } = require("./GiverContract.js")
 
 const giver_keys ={
-    "public": "40c86bb01cd22ce5cc7561db755bea59c61164d1b77f2e5aaaf280b9eb89aa72",
-    "secret": "99775e98fc37af1b8c7d8196778365b31808e383f4a5a55943af9cc52a5c8738"
+    "public": "{your giver's public key}",
+    "secret": "{your giver's secret key}"
 }
 
-const TOKEN = '2130514852:AAGkhVr-2NT2eeyozSnGT1d69bXpXoqQ9Tw';
+const TOKEN = '{your Telegram bot token}';
 
 const bot = new TelegramBot(TOKEN, {
     polling: true
@@ -85,7 +85,7 @@ async function main_create(client,msg) {
     });
 
     const giver = new Account(GiverContract,{
-        address: "0:afde690d7e09f49ea2b971a0819c7b74e1c5f22c57f23e69c457f94e1f3d797d",
+        address: "your giver's address",
         signer: signerKeys(giver_keys),
         client
     });
@@ -93,15 +93,12 @@ async function main_create(client,msg) {
     console.log(`адрес гивера: ${await giver.getAddress()}`)
     console.log(`баланс гивера: ${await giver.getBalance()}`)
 
-    //setGiverForClient(client, giver);
+    
 
     const address = await gameAcc.getAddress();
     console.log(`Future address of the contract will be: ${address}`);
 
-    // const givero = {
-    //     address:"0:69622eb950a7b651b2da6133ce7e5eaee272dd57d609dac110152623cd7bff4e",
-
-    // }
+    
 
     let response = await giver.run("sendValue", {dest:address.toString(),value:300000000});
     console.log('succssessful')
@@ -112,9 +109,7 @@ async function main_create(client,msg) {
     
 
 
-    // Request contract deployment funds form a local TON OS SE giver
-    // not suitable for other networks.
-    // Deploy `hello` contract.
+    
     await gameAcc.deploy();
     console.log(`Your gamecontract was deployed at address: ${address}`);
     console.log(`баланс контракта: ${await gameAcc.getBalance()}`)
