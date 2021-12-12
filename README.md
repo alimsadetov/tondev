@@ -1,17 +1,15 @@
 # Smart-contracts and DeBots on Solidity
 ​
 Author: Alim Sadetov
-
-Compiler version: 0.47.0
 ​
 
 ## Projects
 
-### [1. Shoplist DeBot](./shoplist)
-DeBot for easy creating and working with a shopping list.
+### [1. Everscale Telegram game (@everscale_game_bot)](./telegram-game-lotery)
+Telegram Bot to play simple game in the Everscale blockchain.
 
-### [2. Lottery game](./telegram-game-lotery)
-Telegram Bot to play the lottery in the Everscale blockchain.
+### [2. Shoplist DeBot](./shoplist)
+DeBot for easy creating and working with a shopping list.
 
 ### [3. Wargame](./wargame-easy)
 A small series of smart contracts that can simulate a two-player game.
