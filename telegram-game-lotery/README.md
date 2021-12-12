@@ -1,4 +1,4 @@
-# Everscale Lottery game
+# Everscale Lottery game (@everscale_game_bot)
 
 Автор: Alim Sadetov<br/>
 Вся информация про бота на русском языке, так как интерфейс самого бота тоже на русском.
